@@ -163,7 +163,7 @@ export const AssignmentQueueCard = ({
   }, []);
 
   const retryTriggered = () => {
-    const strippedUserAnswer = userAnswer.trim();
+    const strippedUserAnswer = userAnswer.trim().replace(/[.!?]/g, "");;
 
     if (isSubmittingAnswer) {
       controls.start("retry");
